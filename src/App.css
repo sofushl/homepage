@@ -28,10 +28,6 @@
     position: relative;
     z-index: 0;
     z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
   }
 
 }
@@ -137,7 +133,8 @@
   height: 88px;
   border-top: 1px solid var(--border);
   @media (max-width: 1024px) {
-    height: 48px;
+ 
+	  height: 48px;
   }
 }
 

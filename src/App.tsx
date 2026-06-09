@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
+import githubLogo from './assets/githublogo.png'
 import './App.css'
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
 						<li>
 							<a href="https://github.com/sofuslind/" target="_blank">
 
-								<img className="button-icon" src="./assets/githublogo.png" alt="Github" ></img>
+								<img className="button-icon" src={githubLogo} alt="Github" ></img>
 
 								Sofus Lind
 							</a>
