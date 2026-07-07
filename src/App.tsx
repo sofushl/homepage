@@ -14,7 +14,7 @@ export default function App() {
     return (
         <div className='flex flex-col text-black dark:text-gray-50'>
             <Navbar left={[{
-                text: "HOME", href: "/",
+                text: "HOME", href: "/", newtab: false,
             }
             ]} center={[
 

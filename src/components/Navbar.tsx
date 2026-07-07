@@ -3,6 +3,7 @@ import LinkEl from "./LinkEl";
 interface LinkProp {
     text: string;
     href: string;
+    newtab?: boolean;
 }
 
 interface NavProps {
@@ -18,7 +19,7 @@ export default function Navbar({ left, center, right }: NavProps) {
         <nav className="border-b flex px-5 bg-white  border-slate-200  dark:bg-slate-900 dark:border-slate-800 ">
             <ul className="flex-1 flex flex-row justify-start">
                 {left.map((item) => (
-                    <LinkEl text={item.text} href={item.href} key={item.text} />))}
+                    <LinkEl text={item.text} href={item.href} key={item.text} newtab={item.newtab} />))}
             </ul>
             <ul className="flex-1 flex flex-row justify-center">
                 {center.map((item) => (
