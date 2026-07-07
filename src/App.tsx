@@ -1,15 +1,37 @@
 import Hero from './components/Hero.tsx';
-import ListGroup from './components/ListGroup.tsx'
 import Navbar from './components/Navbar.tsx';
+import ProjectView, { type ProjectProps } from './components/ProjectView.tsx';
 
 export default function App() {
 
+    const projects: ProjectProps[] = [
+        {
+            name: "Nixos",
+            description: "My nixos config",
+            link: "https://github.com/sofushl/nixos",
+            tags: ["nix", "config", "nixos", "server"],
+        },
+        {
+            name: "AbaCordium",
+            description: "Discord bot made in collaboration with AbaCord",
+            link: "https://github.com/AbaCord/AbaCordium",
+            tags: ["javascript", "discord", "collaboration"],
+        },
+        {
+            name: "Portfolio page",
+            description: "Code for the website you are currently on",
+            link: "https://github.com/sofushl/homepage",
+            tags: ["typescript", "react", "web"],
+        },
+        {
+            name: "Minecraft Mount Manager",
+            description: "Javafx application for keeping track of mounts (mainly horses) in minecraft",
+            link: "https://github.com/sofushl/MinecraftMountManager",
+            tags: ["java", "javafx", "app"],
+        }
 
-    const links: Record<string, string> = {
-        "Nixos configuration": "https://github.com/sofushl/nixos",
-        "Abacordium discord bot": "https://github.com/AbaCord/AbaCordium",
-        "This website": "https://github.com/sofushl/homepage",
-    }
+
+    ]
 
     return (
         <div className='flex flex-col text-black dark:text-gray-50'>
@@ -27,10 +49,8 @@ export default function App() {
                 <Hero name='Sofus Lind' tagline='Personal Portfolio' />
             </div>
             <div className='flex-1'>
-                <ListGroup items={Object.keys(links).map(key => { return { text: key, href: links[key] } })} heading="Git repos" />
+                <ProjectView projects={projects} />
             </div>
         </div>
     )
 }
-
-
