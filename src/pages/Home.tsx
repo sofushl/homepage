@@ -35,7 +35,7 @@ export default function Home() {
                 <div className='flex pb-4 px-10'>
                     <h1 className="text-2xl font-bold ">Featured projects</h1>
                     <div className='grow' />
-                    <LinkEl href='/projects' text='more' size='2' newtab={false} />
+                    <LinkEl href='/projects' text='more' newtab={false} />
                 </div>
                 <ProjectView projects={projects} />
             </div>
