@@ -1,56 +1,35 @@
-import Hero from './components/Hero.tsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.tsx';
-import ProjectView, { type ProjectProps } from './components/ProjectView.tsx';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Projects from './pages/Projects.tsx';
 
 export default function App() {
 
-    const projects: ProjectProps[] = [
-        {
-            name: "Nixos",
-            description: "My nixos config",
-            link: "https://github.com/sofushl/nixos",
-            tags: ["nix", "config", "nixos", "server"],
-        },
-        {
-            name: "AbaCordium",
-            description: "Discord bot made in collaboration with AbaCord",
-            link: "https://github.com/AbaCord/AbaCordium",
-            tags: ["javascript", "discord", "collaboration"],
-        },
-        {
-            name: "Portfolio page",
-            description: "Code for the website you are currently on",
-            link: "https://github.com/sofushl/homepage",
-            tags: ["typescript", "react", "web"],
-        },
-        {
-            name: "Minecraft Mount Manager",
-            description: "Javafx application for keeping track of mounts (mainly horses) in minecraft",
-            link: "https://github.com/sofushl/MinecraftMountManager",
-            tags: ["java", "javafx", "app"],
-        }
-
-
-    ]
-
     return (
-        <div className='flex flex-col text-black dark:text-gray-50'>
+        <BrowserRouter>
             <Navbar left={[{
-                text: "HOME", href: "/", newtab: false,
+                text: "Home", href: "/", newtab: false,
+            }, {
+                text: "Projects", href: "/projects", newtab: false,
+            }, {
+                text: "About", href: "/about", newtab: false,
+            }, {
+                text: "Contact", href: "/contact", newtab: false,
             }
             ]} center={[
 
             ]} right={[{
                 text: "github", href: "https://github.com/sofushl",
             }]} />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
 
-
-            <div className='flex-1'>
-                <Hero name='Sofus Lind' tagline='Personal Portfolio' />
-            </div>
-            <div className='flex-1'>
-                <ProjectView projects={projects} />
-            </div>
-        </div>
+        </BrowserRouter>
     )
 }
