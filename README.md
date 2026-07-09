@@ -1,4 +1,4 @@
-# Personal Homepage/Portfolio
+# Portfolio website
 
 ## React + TypeScript + Tailwind
 
