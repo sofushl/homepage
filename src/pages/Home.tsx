@@ -1,6 +1,5 @@
 import Hero from '../components/Hero.tsx';
 import LinkEl from '../components/LinkEl.tsx';
-import ListGroup from '../components/ListGroup.tsx';
 import GridView, { type ProjectProps } from '../components/GridView.tsx';
 
 export default function Home() {
